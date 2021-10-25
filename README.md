@@ -2,11 +2,8 @@
 Revisão de conteúdos, com objetivo de implementar  um projetinho do zero
 
 ##Bibliotecas:
-styled.component
-react-router-dom
-axios
-@material-ui/core
-@material-ui/icons
+
+styled.component, react-router-dom, axios, @material-ui/core, @material-ui/icons
 
 ##
 Criando o projeto, instalando libs e organizando as pastas
