@@ -1,4 +1,4 @@
-# Cookenu
+# Cookenu - Revisão de Conteúdos
 Revisão de conteúdos, com objetivo de implementar  um projetinho do zero
 
 ##
