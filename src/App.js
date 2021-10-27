@@ -7,8 +7,7 @@ import theme from "./constants/theme";
 const Div = styled.div`
     text-align: center;
     font-size: 40px;
-    color: red;
-
+    color: black;
 
 `
 const App = () => {
