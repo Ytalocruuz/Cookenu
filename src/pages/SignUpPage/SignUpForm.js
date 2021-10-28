@@ -8,13 +8,13 @@ import { signUp } from "../../services/user";
 
 
 
-const SignUpForm = () => {
+const SignUpForm = (setRightButtonText) => {
 
     const [form , onChange, clear] = useForm({name: "", email: "", password: ""})
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        signUp(form, clear, history)
+        signUp(form, clear, history, setRightButtonText)
     }
     const history = useHistory()
 
@@ -32,7 +32,6 @@ const SignUpForm = () => {
                         fullWidth
                         required
                         type={"name"}
-                        autoFocus
                       />
                       <TextField
                            name={"email"}
@@ -56,6 +55,7 @@ const SignUpForm = () => {
                            required
                            type={"password"} 
                       />
+                 </InputsContainer>
                       <Button 
                           type={"submit"}
                           fullWidth
@@ -63,7 +63,6 @@ const SignUpForm = () => {
                           color={"primary"}
                           >Fazer Cadastro
                       </Button>
-            </InputsContainer>
         </SignUpFormContainer>
     </form>
     )

@@ -4,13 +4,13 @@ import  TextField  from "@material-ui/core/TextField";
 import useForm from "../../hooks/useForm"
 import  Button  from "@material-ui/core/Button";
 import {useHistory} from "react-router-dom";
-import {goToSignUp} from "../../routes/coordinator"
+import {goToRecipesList} from "../../routes/coordinator"
 import {login} from "../../services/user"
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 
 
 
-const LoginForm = () => {
+const LoginForm = ({ setRightButtonText}) => {
 
     useUnprotectedPage()
 
@@ -18,7 +18,7 @@ const LoginForm = () => {
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        login(form, clear, history)
+        login(form, clear, history,setRightButtonText)
 
     }
 
@@ -33,11 +33,12 @@ const LoginForm = () => {
                       value={form.email}
                       onChange={onChange}
                       variant={"outlined"}
-                      label={"Email"}
+                      label={"E-mail"}
                       margin={"normal"}
                       fullWidth
                       required
                       type={"email"}
+                      
                   />
                    <TextField 
                       name={"password"}
@@ -52,7 +53,7 @@ const LoginForm = () => {
                   />
               </ InputsContainer>
                   <Button
-                      onClick={() => goToSignUp(history)}
+                      onClick={() => goToRecipesList(history)}
                       type={"submit"}
                       fullWidth
                       variant="contained"

@@ -1,22 +1,27 @@
-import React from "react";
-import styled from "styled-components"
+import React, {useState} from "react";
 import Router from "./routes/Router"
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./constants/theme";
+import Header from "./components/Header/Header"
+import { BrowserRouter } from "react-router-dom";
 
-const Div = styled.div`
-    text-align: center;
-    font-size: 40px;
-    color: black;
 
-`
+
 const App = () => {
-  return (
-    <Div>
+
+    const token = localStorage.getItem("token")
+
+    const [rightButtonText, setRightButtonText] = useState ( token ? "Logout" : "Login")
+
+    return (
+    
       <ThemeProvider theme={theme}>
-      <Router />
+        <BrowserRouter>
+          <Header rightButtonText ={rightButtonText} setRightButtonText={setRightButtonText} />
+          <Router rightButtonText ={rightButtonText} setRightButtonText={setRightButtonText} />
+        </BrowserRouter>
       </ThemeProvider>
-    </Div>
+    
   );
 }
 
